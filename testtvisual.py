@@ -11,7 +11,7 @@ st.markdown("""
     .stApp {
         background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
     }
-        .block-container { 
+    .block-container { 
         padding-top: 5rem; /* Ubah angka ini (misal 5rem atau 80px) untuk jarak lebih jauh */
         padding-bottom: 2rem;
         padding-left: 3rem;
@@ -171,4 +171,5 @@ with col_cal:
                 <div><div class="cal-desc">Meeting for case 3</div><div class="cal-sub">14:00 - 15:30</div></div>
             </div>
         """, unsafe_allow_html=True)
+
 
