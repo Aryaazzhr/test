@@ -60,18 +60,26 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- FUNGSI UNTUK SPARKLINE (Grafik Kecil) ---
+# --- FUNGSI UNTUK SPARKLINE  ---
 def create_sparkline(data, color):
     fig = go.Figure()
-    fig.add_trace(go.Scatter(y=data, mode='lines', line=dict(color=color, width=3), hoverinfo='skip'))
+    # Menambahkan garis
+    fig.add_trace(go.Scatter(
+        y=data, 
+        mode='lines', 
+        line=dict(color=color, width=3), 
+        hoverinfo='skip'
+    ))
+    
+    # Mengatur layout agar minimalis (tanpa sumbu/axis)
     fig.update_layout(
-        sparklines=dict(data=data, type='line'),
-        xaxis=dict(visible=False),
-        yaxis=dict(visible=False),
-        margin=dict(l=0, r=0, t=0, b=0),
+        xaxis=dict(visible=False, showgrid=False, zeroline=False),
+        yaxis=dict(visible=False, showgrid=False, zeroline=False),
+        margin=dict(l=0, r=0, t=5, b=5), # Margin sangat kecil
         height=50,
         paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)'
+        plot_bgcolor='rgba(0,0,0,0)',
+        showlegend=False
     )
     return fig
 
@@ -209,4 +217,5 @@ with col_cal:
     """, unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
+
 
