@@ -1,4 +1,4 @@
-pip install plotly
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -209,3 +209,4 @@ with col_cal:
     """, unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
+
